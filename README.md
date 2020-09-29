@@ -38,7 +38,7 @@ tidyverse, caret, lubridate, rpart, rpart.plot, kableExtra, doParallel, gridExtr
 ### Main elements
 * Data's integrity had to be checked before cleaning.
 
-* Thorough data exploration revealed interesting patterns, and gave a clearer understanding of this *alternative investment strategy* (less than 40% of all projects in the last 10 years got funded, and around 14% received no money at all). 
+* Thorough data exploration revealed interesting patterns, and gave a clearer understanding of this *alternative investment strategy* (**less than 40% of all projects in the last 10 years got funded, and around 14% received no money at all**). 
 
 * The prediction attempts were focused on Residuals' Explanation (evaluated with both RMSE (Root Mean Square Error) and Kolmogorov-Smirnov test value), using algorithms such as Explicit Biaises and Regression Trees.
 * Multiple biaises model drastically improved the RMSE compared to the best single biais model.
