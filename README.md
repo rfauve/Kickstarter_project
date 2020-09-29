@@ -36,20 +36,16 @@ The required libraries are:
 tidyverse, caret, lubridate, rpart, rpart.plot, kableExtra, doParallel, gridExtra
 
 ### Main elements
-* The data (already cleaned) was retrieved from the Web.
+* Data's integrity had to be checked before cleaning.
 
-* Nested information have been extracted (release year, different genres) to maximise the accessible
-data for training the models.
-* MCA (Multiple Correspondence Analysis) was performed on the genres of the movies to reveal potential further nested information.
+* Thorough data exploration revealed interesting patterns, and gave a clearer understanding of this *alternative investment strategy* (less than 40% of all projects in the last 10 years got funded, and around 14% received no money at all). 
 
-* The prediction attempt was focused on matrix factorisation, by adding biaises to a naive mean of all ratings.
-* For multiple biaises, hierarchical order of the different biaises did not show any siginificant effect.
-
-* Using SVD (Single Value Decomposition) on the top of the best multiple biaises model lowered the RMSE even more.
+* The prediction attempts were focused on Residuals' Explanation (evaluated with both RMSE (Root Mean Square Error) and Kolmogorov-Smirnov test value), using algorithms such as Explicit Biaises and Regression Trees.
+* Multiple biaises model drastically improved the RMSE compared to the best single biais model.
+* A single Regression Tree model is almost as good as the best multiple biaises, but it take much longer to train (30 min on 6 threads).
+* The Ensemble model of both the best multiple biaises model and the Regression Tree gave no significant improvement.
 
 * The results on the final test set showed no sign of overfitting.
-* Final RMSE : 0.86452 (without SVD)
-* Final RMSE : 0.81574 (with SVD)
+* Final RMSE : 1.27115 (Ensemble model)
 
-* Models can be further improved, for example by taking into account the genres of the movies as explicit biaises, or by increasing 
-the number of implicit features and/or the number of iterations of the SVD.
+* The mean absolute error with this model is around 10 USD, which tells how precise the predictions of this model is (median pledged money: ~800 USD).
